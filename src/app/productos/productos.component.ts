@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./productos.component.css']
 })
 export class ProductosComponent {
-
+  productos = [
+    {
+      nombre: 'Producto 1',
+      descripcion: 'Descripción del producto 1',
+      precio: 50
+    },
+    {
+      nombre: 'Producto 2',
+      descripcion: 'Descripción del producto 2',
+      precio: 75
+    },
+    // Agrega más objetos para cada producto
+  ];
 }
+
+
