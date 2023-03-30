@@ -1,0 +1,31 @@
+<nav class="bg-gray-900 py-4 md:py-6">
+  <div class="container mx-auto flex items-center justify-between">
+    <div class="flex items-center">
+      <a href="#" class="text-white text-lg font-bold">Logo</a>
+      <button class="md:hidden ml-4" type="button" (click)="isMenuOpen = !isMenuOpen">
+        <mat-icon aria-hidden="false" aria-label="Example menu icon" fontIcon="menu"></mat-icon>
+      </button>
+    </div>
+    <div class="hidden md:flex md:items-center">
+      <div class="md:flex">
+        <a href="#" class="text-white text-lg block md:inline-block md:text-left md:mr-4">Inicio</a>
+        <a href="#" class="text-white text-lg block md:inline-block md:text-left md:mr-4">Productos</a>
+        <a href="#" class="text-white text-lg block md:inline-block md:text-left md:mr-4">Contacto</a>
+      </div>
+    </div>
+    <div class="hidden md:block">
+      <a href="#" class="text-white text-lg mr-4">Iniciar sesión</a>
+      <button class="bg-white text-gray-900 rounded-full px-4 py-2">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+      </button>
+    </div>
+    <div ngbDropdown>
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Botón de menú</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button class="dropdown-item">Opción 1</button>
+          <button class="dropdown-item">Opción 2</button>
+          <button class="dropdown-item">Opción 3</button>
+        </div>
+      </div>
+  </div>
+</nav>
