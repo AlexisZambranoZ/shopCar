@@ -4,17 +4,23 @@ import { Producto } from '.';
 @Injectable({
   providedIn: 'root'
 })
-export class ShopcarrService {
+export class ShopcarService {
 
-  productosEnCarrito: Producto[] = [];
+  productos: Producto[] = [];
 
   constructor() { }
 
-  agregarProducto(producto: any) {
-    this.productosEnCarrito.push(producto);
+  getProductos() {
+    return this.productos;
+  }
+  agregarProducto(producto: Producto) {
+    this.productos.push(producto);
   }
 
-  obtenerProductosEnCarrito() {
-    return this.productosEnCarrito;
+  eliminarProducto(producto: Producto) {
+    const index = this.productos.indexOf(producto);
+    this.productos.splice(index, 1);
   }
+
+  
 }

@@ -28,6 +28,7 @@
                 </button>
 
                 <!-- Modal -->
+                <app-carrito></app-carrito>
                 <div *ngIf="mostrarProductos && isOpen"
                     class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
                     <div class="relative w-full max-w-md p-4 bg-white rounded-lg shadow-lg">
@@ -38,12 +39,6 @@
                             X
                         </button>
 
-                        <ul class="divide-y divide-gray-300">
-                            <li *ngFor="let producto of productos" class="py-2">
-                                <p class="font-semibold text-gray-900">{{producto.nombre}} - {{producto.precio}}</p>
-                                <p class="text-gray-700">{{producto.descripcion}}</p>
-                            </li>
-                        </ul>
                     </div>
                 </div>
 
@@ -60,6 +55,7 @@
                     <mat-icon style="color: white;">shopping_cart</mat-icon>
                 </button>
                 <!-- Modal -->
+
                 <div *ngIf="mostrarProductos && isOpen"
                     class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
                     <div class="relative w-full max-w-md p-4 bg-white rounded-lg shadow-lg">

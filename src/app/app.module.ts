@@ -4,12 +4,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { AppComponent } from './app.component';
 import { ProductosComponent } from './productos/productos.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ProductosComponent
+    ProductosComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,

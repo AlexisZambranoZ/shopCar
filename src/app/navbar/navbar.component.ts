@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ShopcarrService } from '../shopcarr.service';
+import { ShopcarService } from '../shopcarr.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +14,7 @@ export class NavbarComponent {
   showDropdown = false;
   mostrarProductos = false;
   isOpen = true
-  constructor(public carritoService: ShopcarrService) {
+  constructor(public carritoService: ShopcarService) {
   }
 
   productos = [
@@ -25,11 +25,10 @@ export class NavbarComponent {
 
 
 
-  ngOnInit(): void {
-    this.productosEnCarrito = this.carritoService.obtenerProductosEnCarrito();
+  ngOnInit(){
+    this.productosEnCarrito = this.carritoService.getProductos();
     console.log(this.productosEnCarrito);
   }
-
 
   toggleMenu() {
     this.openMenu = !this.openMenu;
