@@ -1,5 +1,5 @@
-<div class="grid grid-cols-1 gap-4 mx-auto sm:grid-cols-1 md:grid-cols-3">
-  <div *ngFor="let producto of productos" class="p-4 bg-white rounded-md shadow-md">
+<div class="grid grid-cols-1 gap-4 mx-auto bg-yellow-500 sm:grid-cols-1 md:grid-cols-3">
+  <div *ngFor="let producto of productos" class="p-4 rounded-md shadow-md">
     <div class="p-2 text-center text-white card bg-slate-900">
       <div>
         <img [src]="producto.imagen" alt="">
@@ -9,7 +9,7 @@
       <h2 class="mb-4 text-xl font-bold">{{ producto.nombre }}</h2>
       <p class="mb-4 font-bold">{{ producto.descripcion }}</p>
       <p class="mb-4 text-lg font-semibold text-gray-900">${{ producto.precio }}</p>
-      <button (click)="agregarAlCarrito(producto)"
+      <button (click)="agregarAlCarrito(producto);sweetAlert()"
         class="px-4 py-2 font-semibold text-white bg-blue-500 rounded-md hover:bg-blue-600">Agregar al carrito</button>
     </div>
   </div>

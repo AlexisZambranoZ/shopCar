@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ShopcarService } from '../shopcarr.service';
 import { Producto } from '..';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-productos',
@@ -36,6 +37,16 @@ export class ProductosComponent {
     this.carritoService.agregarProducto(producto)
   }
 
+
+  sweetAlert(){
+    
+    Swal.fire({
+      title: 'Título',
+      text: 'Mensaje',
+      icon: 'success', // success, error, warning, info
+      confirmButtonText: 'Aceptar'
+    });
+  }
 
 
 }
