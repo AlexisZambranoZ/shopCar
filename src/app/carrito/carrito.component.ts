@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ShopcarrService } from '../shopcarr.service';
+import { ShopcarService } from '../shopcarr.service';
 
 @Component({
   selector: 'app-carrito',
@@ -8,7 +8,7 @@ import { ShopcarrService } from '../shopcarr.service';
 })
 export class CarritoComponent {
 
-  constructor(public carritoService: ShopcarrService){
+  constructor(public carritoService: ShopcarService){
     
   }
 }

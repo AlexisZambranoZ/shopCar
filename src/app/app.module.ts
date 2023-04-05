@@ -5,17 +5,21 @@ import { AppComponent } from './app.component';
 import { ProductosComponent } from './productos/productos.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { AboutPageComponent } from './about-page/about-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ProductosComponent,
-    CarritoComponent
+    CarritoComponent,
+    AboutPageComponent
   ],
   imports: [
     BrowserModule,
     MatIconModule,
+    MatToolbarModule
    
   ],
   providers: [],

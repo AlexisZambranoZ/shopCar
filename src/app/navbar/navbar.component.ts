@@ -14,16 +14,11 @@ export class NavbarComponent {
   showDropdown = false;
   mostrarProductos = false;
   isOpen = true
+  
   constructor(public carritoService: ShopcarService) {
   }
 
-  productos = [
-    { nombre: 'Producto 1', descripcion: 'Descripción del producto 1', precio: 50 },
-    { nombre: 'Producto 2', descripcion: 'Descripción del producto 2', precio: 75 },
-    { nombre: 'Producto 3', descripcion: 'Descripción del producto 3', precio: 100 }
-  ];
-
-
+ 
 
   ngOnInit(){
     this.productosEnCarrito = this.carritoService.getProductos();

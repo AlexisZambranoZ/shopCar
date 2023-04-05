@@ -1,3 +1,13 @@
+<mat-toolbar color="primary">
+    <span>Nombre de la app</span>
+    <span class="spacer"></span>
+    <button mat-button>Inicio</button>
+    <button mat-button>Productos</button>
+    <button mat-button>Contacto</button>
+  </mat-toolbar>
+
+
+
 <nav class="bg-gray-800">
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
@@ -27,12 +37,24 @@
                     <mat-icon>shopping_cart</mat-icon>
                 </button>
 
-                <!-- Modal -->
-                <app-carrito></app-carrito>
+
                 <div *ngIf="mostrarProductos && isOpen"
                     class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
                     <div class="relative w-full max-w-md p-4 bg-white rounded-lg shadow-lg">
                         <h2 class="mb-4 text-xl font-semibold">Productos</h2>
+
+
+                        <ul>
+                            <li *ngFor="let producto of carritoService.getProductos()">
+                                {{ producto.nombre }} - {{ producto.precio }}
+                                <button (click)="carritoService.eliminarProducto(producto)">Eliminar</button>
+                            </li>
+                        </ul>
+
+                        <div *ngIf="carritoService.getProductos().length == 0">
+                            <p>No hay productos en el carrito</p>
+                        </div>
+
 
                         <button (click)="isOpen = false"
                             class="absolute top-0 right-0 px-4 py-2 mt-2 font-semibold hover:bg-red-600">
@@ -46,11 +68,11 @@
             </div>
             <!-- Manu Responsive -->
             <div class="flex items-center md:hidden">
-                <button class="ml-3" (click)="openMenu = true">
+                <button class="ml-3" (click)="openMenu ? openMenu = false : openMenu = true">
                     <mat-icon style="color: white;">menu</mat-icon>
                 </button>
-                <button (click)="toggleProductos(); isOpen = true"
-                    class="p-1 text-gray-40">
+
+                <button (click)="toggleProductos(); isOpen = true" class="p-1 text-gray-40">
                     <span class="sr-only">Cart</span>
                     <mat-icon style="color: white;">shopping_cart</mat-icon>
                 </button>
@@ -66,12 +88,18 @@
                             X
                         </button>
 
-                        <ul class="divide-y divide-gray-300">
-                            <li *ngFor="let producto of productos" class="py-2">
-                                <p class="font-semibold text-gray-900">{{producto.nombre}} - {{producto.precio}}</p>
-                                <p class="text-gray-700">{{producto.descripcion}}</p>
-                            </li>
-                        </ul>
+                        <div *ngIf="carritoService.getProductos().length > 0">
+                            <h2>Carrito de compras</h2>
+                            <ul>
+                                <li *ngFor="let producto of carritoService.getProductos()">
+                                    {{ producto.nombre }} - {{ producto.precio }}
+                                    <button (click)="carritoService.eliminarProducto(producto)">Eliminar</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div *ngIf="carritoService.getProductos().length == 0">
+                            <p>No hay productos en el carrito</p>
+                        </div>
                     </div>
                 </div>
 
