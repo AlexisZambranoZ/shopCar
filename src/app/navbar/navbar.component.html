@@ -16,16 +16,19 @@
                         <span class="text-yellow-400">S</span>
                     </button>
                 </a>
-                <div class="hidden md:block">
+                <div class="hidden font-bold md:block">
                     <div class="flex items-baseline ml-10 space-x-4">
-                        <a class="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:text-white" href="/">
-                            Home
+                        <a routerLink="/" class="px-3 py-2 text-sm text-white rounded-md hover:text-yellow-400"
+                            href="/">
+                            Inicio
                         </a>
-                        <a class="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:text-white" href="/">
-                            About
+                        <a routerLink="/about" class="px-3 py-2 text-sm text-white rounded-md hover:text-yellow-400"
+                            href="/">
+                            Sobre nosotros
                         </a>
-                        <a class="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:text-white" href="/">
-                            Contact
+                        <a routerLink="/contact" class="px-3 py-2 text-sm text-white rounded-md hover:text-yellow-400"
+                            href="/">
+                            Contacto
                         </a>
                     </div>
                 </div>
@@ -33,14 +36,15 @@
 
             <div class="items-center hidden md:flex">
 
-                <button (click)="toggleProductos(); isOpen = true" class="relative px-4 py-2 font-semibold text-white bg-blue-500 rounded-md hover:bg-blue-600">
+                <button (click)="toggleProductos(); isOpen = true"
+                    class="relative px-4 py-2 font-semibold text-white bg-blue-500 rounded-md hover:bg-blue-600">
                     <mat-icon>shopping_cart</mat-icon>
                     <span *ngIf="carritoService.getProductos().length > 0"
-                          class="absolute top-0 right-0 inline-flex items-center justify-center w-5 h-5 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-red-500 rounded-full">
+                        class="absolute top-0 right-0 inline-flex items-center justify-center w-5 h-5 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-red-500 rounded-full">
                         {{ carritoService.getProductos().length }}
                     </span>
                 </button>
-                
+
 
 
                 <div *ngIf="mostrarProductos && isOpen"
@@ -48,10 +52,16 @@
                     <div class="relative w-full max-w-md p-4 bg-white rounded-lg shadow-lg">
                         <h2 class="mb-4 text-xl font-semibold">Productos</h2>
 
-                        <ul>
-                            <li *ngFor="let producto of carritoService.getProductos()">
-                                {{ producto.nombre }} - {{ producto.precio }}
-                                <button (click)="carritoService.eliminarProducto(producto)">Eliminar</button>
+                        <ul class="flex flex-wrap items-center space-x-2">
+                            <li *ngFor="let producto of carritoService.getProductos()" class="w-full">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <img [src]="producto.imagen" alt="" class="h-16">
+                                        <p>{{ producto.nombre }} - {{ producto.precio }}</p>
+                                    </div>
+                                    <button (click)="carritoService.eliminarProducto(producto)"
+                                        class="ml-auto font-extrabold text-red-600 ">Eliminar</button>
+                                </div>
                             </li>
                         </ul>
 
@@ -63,7 +73,7 @@
                             class="absolute top-0 right-0 px-4 py-2 mt-2 font-semibold hover:bg-red-600">
                             X
                         </button>
-                        
+
                     </div>
                 </div>
 
@@ -71,14 +81,16 @@
             </div>
 
             <div class="flex items-center md:hidden">
-                <button class="relative px-4 py-2 mr-5 font-semibold bg-blue-500" (click)="openMenu ? openMenu = false : openMenu = true">
+                <button class="relative px-4 py-2 mr-5 font-semibold bg-blue-500"
+                    (click)="openMenu ? openMenu = false : openMenu = true">
                     <mat-icon style="color: white;">menu</mat-icon>
                 </button>
 
-                <button (click)="toggleProductos(); isOpen = true" class="relative px-4 py-2 font-semibold text-white bg-blue-500 rounded-md hover:bg-blue-600">
+                <button (click)="toggleProductos(); isOpen = true"
+                    class="relative px-4 py-2 font-semibold text-white bg-blue-500 rounded-md hover:bg-blue-600">
                     <mat-icon>shopping_cart</mat-icon>
                     <span *ngIf="carritoService.getProductos().length > 0"
-                          class="absolute top-0 right-0 inline-flex items-center justify-center w-5 h-5 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-red-500 rounded-full">
+                        class="absolute top-0 right-0 inline-flex items-center justify-center w-5 h-5 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-red-500 rounded-full">
                         {{ carritoService.getProductos().length }}
                     </span>
                 </button>
@@ -115,13 +127,16 @@
 
     <div class="md:hidden" *ngIf="openMenu" id="mobile-menu">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a class="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:text-white" href="/">
+            <a routerLink="/" class="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:text-white"
+                href="/">
                 Productos
             </a>
-            <a class="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:text-white" href="/">
+            <a routerLink="/about"
+                class="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:text-white" href="/">
                 Acerca De
             </a>
-            <a class="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:text-white" href="/">
+            <a routerLink="/contact"
+                class="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:text-white" href="/">
                 Contacto
             </a>
         </div>

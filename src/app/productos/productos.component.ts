@@ -41,8 +41,8 @@ export class ProductosComponent {
   sweetAlert(){
     
     Swal.fire({
-      title: 'Título',
-      text: 'Mensaje',
+      title: 'Producto Agregado',
+      text: '',
       icon: 'success', // success, error, warning, info
       confirmButtonText: 'Aceptar'
     });

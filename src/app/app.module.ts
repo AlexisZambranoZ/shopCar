@@ -7,6 +7,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AboutPageComponent } from './about-page/about-page.component';
+import { ContactComponent } from './contact/contact.component';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { AppRoutingModule } from './routing/routing.module';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -14,13 +18,16 @@ import { AboutPageComponent } from './about-page/about-page.component';
     NavbarComponent,
     ProductosComponent,
     CarritoComponent,
-    AboutPageComponent
+    AboutPageComponent,
+    ContactComponent,
+    FooterComponent
   ],
   imports: [
+    AppRoutingModule ,
     BrowserModule,
     MatIconModule,
-    MatToolbarModule
-   
+    MatToolbarModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
