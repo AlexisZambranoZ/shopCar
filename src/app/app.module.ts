@@ -8,9 +8,15 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { ContactComponent } from './contact/contact.component';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './routing/routing.module';
 import { FooterComponent } from './footer/footer.component';
+import { ConfirmationBuyComponent } from './confirmation-buy/confirmation-buy.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,14 +26,21 @@ import { FooterComponent } from './footer/footer.component';
     CarritoComponent,
     AboutPageComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    ConfirmationBuyComponent
   ],
   imports: [
-    AppRoutingModule ,
+    AppRoutingModule,
     BrowserModule,
     MatIconModule,
     MatToolbarModule,
-    RouterModule
+    RouterModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    FormsModule,
+    BrowserModule,
+    BrowserAnimationsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

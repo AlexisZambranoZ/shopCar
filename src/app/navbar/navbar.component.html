@@ -58,6 +58,7 @@
                                     <div class="flex items-center">
                                         <img [src]="producto.imagen" alt="" class="h-16">
                                         <p>{{ producto.nombre }} - {{ producto.precio }}</p>
+                                        <p>{{ producto.talla }}</p>
                                     </div>
                                     <button (click)="carritoService.eliminarProducto(producto)"
                                         class="ml-auto font-extrabold text-red-600 ">Eliminar</button>
