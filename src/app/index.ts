@@ -4,5 +4,5 @@ export interface Producto {
     descripcion: string
     precio: number;
     imagen: string;
-    talla?: string
+    tallas?: string[]
   }

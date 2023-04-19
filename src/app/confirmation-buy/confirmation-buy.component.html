@@ -17,18 +17,17 @@
 <div>
     <h1 mat-dialog-title>{{ data.nombre }}</h1>
     <div mat-dialog-content>
-        
+      
         <p></p>
         <mat-form-field>
             <mat-label>Talla</mat-label>
-            <mat-select [(ngModel)]="data.talla">
-                <mat-option *ngFor="let talla of ['M', 'G']" [value]="talla">{{ talla }}</mat-option>
+            <mat-select  id="talla-selector"[(ngModel)]="data.tallas">
+                <mat-option *ngFor="let talla of ['CH ','M', 'G']" [value]="talla">{{ talla }}</mat-option>
             </mat-select>
         </mat-form-field>
     </div>
     <div mat-dialog-actions>
-        <button mat-button (click)="onNoClick()">Cancelar</button>
-        <button mat-button color="primary" [mat-dialog-close]="true" (click)="onConfirmClick()">Agregar al
-            carrito</button>
-    </div>
+        <button class="bg-red-500 p-1 rounded-lg"mat-button (click)="onNoClick()" style="margin-right: 10px;">Cancelar</button>
+        <button class="bg-blue-600 p-1 rounded-lg" mat-button color="primary" [mat-dialog-close]="true" (click)="onConfirmClick()" style="margin-left: 10px;">Agregar al carrito</button>
+      </div>
 </div>

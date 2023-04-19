@@ -8,8 +8,9 @@
       <p class="mb-4 font-bold">{{ producto.id }}</p>
       <h2 class="mb-4 text-xl font-bold">{{ producto.nombre }}</h2>
       <p class="mb-4 font-bold">{{ producto.descripcion }}</p>
+      <p class="mb-4 text-lg font-semibold text-gray-100">{{ producto.talla }}</p>
       <p class="mb-4 text-lg font-semibold text-gray-100">${{ producto.precio }}</p>
-      <button (click)="agregarAlCarrito(producto);sweetAlert()"
+      <button (click)="agregarAlCarrito(producto)"
         class="px-4 py-2 font-semibold text-white bg-blue-500 rounded-md hover:bg-blue-600">Agregar al carrito</button>
     </div>
   </div>
